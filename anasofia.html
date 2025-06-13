@@ -1,0 +1,205 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Negocio Escolar</title> 
+<link rel="stylesheet" href="styles.css"> 
+</head> 
+<body> 
+<header> 
+<h1>Bienvenidos a KFC</h1> 
+<nav> 
+<a href="#productos">Productos</a> 
+<a href="#galeria">Galería</a> 
+<a href="#contacto">Contacto</a> 
+</nav> 
+</header> 
+<!-- SLIDER --> 
+<section class="slider"> 
+<div class="slides"> 
+<input type="radio" name="radio-btn" id="slide1" checked> 
+<input type="radio" name="radio-btn" id="slide2"> 
+<input type="radio" name="radio-btn" id="slide3"> 
+<div class="slide first"> 
+<img src="slide1.jpg" alt="slide1"> 
+</div> 
+<div class="slide"> 
+<img src="slide2.jpg" alt="slide2"> 
+</div> 
+<div class="slide"> 
+<img src="slide3.jpg" alt="slide3"> 
+</div> 
+<div class="navigation-manual"> 
+<label for="slide1" class="manual-btn"></label> 
+<label for="slide2" class="manual-btn"></label> 
+<label for="slide3" class="manual-btn"></label> 
+</div> 
+</div> 
+</section> 
+<section id="productos"> 
+<h2>Nuestros Productos</h2> 
+<p>Conoce los productos que ofrecemos en nuestro negocio.</p> 
+</section> 
+<section id="galeria"> 
+<h2>Galería</h2> 
+<div class="galeria"> 
+<img src="producto1.jpg" alt="slide1"> 
+<img src="producto2.jpg" alt="slide2"> 
+<img src="producto3.jpg" alt="slide3"> 
+</div> 
+</section> 
+<section id="contacto"> 
+<h2>Contacto</h2> 
+<form action="#"> 
+<label for="nombre">Nombre:</label> 
+<input type="text" id="nombre" name="nombre" required> 
+<label for="email">Correo:</label> 
+<input type="email" id="email" name="email" required> 
+<label for="mensaje">Mensaje:</label> 
+<textarea id="mensaje" name="mensaje" required></textarea> 
+<button type="submit">Enviar</button> 
+</form> 
+</section> 
+<section id="mapa"> 
+<h2>¿Dónde estamos?</h2> 
+<div class="mapa-container"> 
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.0000000000
+ 005!2d
+99.1332086!3d19.4326077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s
+ 0x0%3A0x0!2zMTnCsDI1JzU3LjQiTiA5OcKwMDgnMDAuMCJX!5e0!3m2!1ses
+419!2smx!4v1587497132985!5m2!1ses-419!2smx"  
+width="100%" height="400" frameborder="0" 
+style="border:0;" allowfullscreen="" aria-hidden="false" 
+tabindex="0"></iframe> 
+</div> 
+</section> 
+<footer> 
+<p>&copy; 2025 Mi Negocio Escolar</p> 
+</footer> 
+</body> 
+</html> 
+CSS: 
+body { 
+font-family: Arial, sans-serif; 
+margin: 0; 
+padding: 0; 
+} 
+header { 
+background-color: #007BFF; 
+color: white; 
+padding: 20px; 
+text-align: center; 
+} 
+nav a { 
+color: white; 
+margin: 0 15px; 
+text-decoration: none; 
+} 
+section { 
+padding: 40px 20px; 
+text-align: center; 
+} 
+.galeria { 
+display: flex; 
+justify-content: center; 
+gap: 10px; 
+} 
+.galeria img { 
+width: 200px; 
+height: 150px; 
+object-fit: cover; 
+border-radius: 8px; 
+} 
+form { 
+display: flex; 
+flex-direction: column; 
+align-items: center; 
+max-width: 400px; 
+margin: 0 auto; 
+} 
+form input, form textarea { 
+width: 100%; 
+margin-bottom: 15px; 
+padding: 10px; 
+border: 1px solid #ccc; 
+border-radius: 5px; 
+} 
+form button { 
+padding: 10px 20px; 
+background-color: #007BFF; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+} 
+footer { 
+background-color: #f0f0f0; 
+text-align: center; 
+padding: 15px; 
+} 
+/* Carrusel de imágenes */ 
+.slider { 
+width: 90%; 
+max-width: 800px; 
+height: 400px; 
+margin: 40px auto; 
+overflow: hidden; 
+border-radius: 15px; 
+box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+position: relative; 
+} 
+.slides { 
+width: 300%; 
+height: 100%; 
+display: flex; 
+transition: all 0.6s ease; 
+} 
+.slide { 
+width: 100%; 
+flex-shrink: 0; 
+} 
+.slide img { 
+width: 100%; 
+height: 100%; 
+object-fit: cover; 
+} 
+.slides input { 
+display: none; 
+} 
+.navigation-manual { 
+position: absolute; 
+width: 100%; 
+display: flex; 
+justify-content: center; 
+bottom: 15px; 
+} 
+.manual-btn { 
+border: 2px solid #007BFF; 
+padding: 5px; 
+border-radius: 50%; 
+cursor: pointer; 
+margin: 0 5px; 
+transition: background 0.3s; 
+} 
+.manual-btn:hover { 
+background: #007BFF; 
+} 
+#slide1:checked ~ .first { 
+margin-left: 0; 
+} 
+#slide2:checked ~ .first { 
+margin-left: -100%; 
+} 
+#slide3:checked ~ .first { 
+margin-left: -200%; 
+} 
+.mapa-container { 
+width: 90%; 
+max-width: 800px; 
+margin: 0 auto; 
+border: 3px solid #007BFF; 
+border-radius: 10px; 
+overflow: hidden; 
+} 
